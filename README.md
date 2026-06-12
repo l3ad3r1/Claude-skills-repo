@@ -10,6 +10,12 @@ specialized tasks reliably.
 |---|---|
 | [`markitdown-converter`](skills/markitdown-converter/) | Converts files of almost any format (PDF, Word, PowerPoint, Excel, HTML, CSV/JSON/XML, images, audio, EPub, ZIP archives) into clean, structure-preserving Markdown for LLM and text-analysis pipelines — then optionally analyzes the result. |
 | [`dev-browser`](skills/dev-browser/) | Drives a real browser (navigate, click, fill forms, screenshot, full Playwright API) via sandboxed JavaScript, wrapping the open-source [dev-browser](https://github.com/SawyerHood/dev-browser) CLI by Sawyer Hood (MIT). |
+| [`pdf-toolkit`](skills/pdf-toolkit/) | Merge, split, rotate, watermark, extract text/tables, and OCR PDFs — built on `pypdf`, `pdfplumber`, and `OCRmyPDF`. |
+| [`docx-toolkit`](skills/docx-toolkit/) | Create, read, and edit Word `.docx` documents (headings, tables, images, runs) — built on `python-docx`. |
+| [`xlsx-toolkit`](skills/xlsx-toolkit/) | Create, read, and edit Excel `.xlsx` workbooks (sheets, formulas, formatting, charts) — built on `openpyxl`. |
+| [`pptx-toolkit`](skills/pptx-toolkit/) | Create, read, and edit PowerPoint `.pptx` decks (slides, bullets, images, notes) — built on `python-pptx`. |
+| [`mcp-server-builder`](skills/mcp-server-builder/) | Build MCP servers (tools/resources/prompts) in Python (FastMCP) or Node/TS — with a working template and best practices. |
+| [`skill-builder`](skills/skill-builder/) | Author, validate, and package Agent Skills into installable `.skill` archives — with bundled validator and packager. |
 
 ---
 
@@ -118,7 +124,18 @@ collaboration with Claude (Anthropic).** Each skill credits its upstream authors
   (MIT) — all credit for the underlying format support belongs to its authors.
 - `dev-browser` wraps the [**dev-browser**](https://github.com/SawyerHood/dev-browser)
   CLI by **Sawyer Hood** (MIT), brought to you by [Do Browser](https://dobrowser.io).
-- Built for [**Anthropic's Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
+- `pdf-toolkit` is built on [pypdf](https://github.com/py-pdf/pypdf) (BSD),
+  [pdfplumber](https://github.com/jsvine/pdfplumber) (MIT), and
+  [OCRmyPDF](https://github.com/ocrmypdf/OCRmyPDF) (MPL-2.0).
+- `docx-toolkit`, `xlsx-toolkit`, `pptx-toolkit` are built on
+  [python-docx](https://github.com/python-openxml/python-docx),
+  [openpyxl](https://foss.heptapod.net/openpyxl/openpyxl), and
+  [python-pptx](https://github.com/scanny/python-pptx) (all MIT).
+- `mcp-server-builder` uses the official [MCP SDKs](https://github.com/modelcontextprotocol)
+  (MIT). `skill-builder` is an original work based on the public Agent Skills spec.
+- These skills are **original, permissively-licensed** implementations — they do
+  not include or derive from any proprietary skill content.
+- Built for the [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
   format.
 
 ## License
