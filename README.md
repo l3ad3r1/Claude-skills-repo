@@ -9,6 +9,7 @@ specialized tasks reliably.
 | Skill | What it does |
 |---|---|
 | [`markitdown-converter`](skills/markitdown-converter/) | Converts files of almost any format (PDF, Word, PowerPoint, Excel, HTML, CSV/JSON/XML, images, audio, EPub, ZIP archives) into clean, structure-preserving Markdown for LLM and text-analysis pipelines — then optionally analyzes the result. |
+| [`dev-browser`](skills/dev-browser/) | Drives a real browser (navigate, click, fill forms, screenshot, full Playwright API) via sandboxed JavaScript, wrapping the open-source [dev-browser](https://github.com/SawyerHood/dev-browser) CLI by Sawyer Hood (MIT). |
 
 ---
 
@@ -79,18 +80,49 @@ keeps converting the rest of a batch even if one file fails.
 
 ---
 
+## dev-browser
+
+Drive a real browser from the agent — navigate, click, fill forms, run the full
+Playwright API, and take screenshots via **sandboxed JavaScript**. This skill
+wraps the open-source [`dev-browser`](https://github.com/SawyerHood/dev-browser)
+CLI; the upstream tool is **not vendored** here — it's installed from npm.
+
+### Install
+
+```bash
+npm install -g dev-browser
+dev-browser install     # installs Playwright + Chromium
+```
+
+### Use
+
+```bash
+dev-browser --headless <<'EOF'
+const page = await browser.getPage("main");
+await page.goto("https://example.com", { waitUntil: "domcontentloaded" });
+console.log(await page.title());
+EOF
+```
+
+Run `dev-browser --help` for the full LLM usage guide and API reference. See the
+[skill](skills/dev-browser/) for Windows/PowerShell usage and `--connect` mode.
+
+---
+
 ## Credits
 
-**Created by Rinu ([l3ad3r1](https://github.com/l3ad3r1)) in collaboration with
-Claude (Anthropic).**
+**Skills packaged by Rinu ([l3ad3r1](https://github.com/l3ad3r1)) in
+collaboration with Claude (Anthropic).** Each skill credits its upstream authors:
 
-- Conversion is powered by [**Microsoft MarkItDown**](https://github.com/microsoft/markitdown),
-  the library that does all the heavy lifting (MIT licensed). All credit for the
-  underlying format support belongs to its authors.
+- `markitdown-converter` is powered by [**Microsoft MarkItDown**](https://github.com/microsoft/markitdown)
+  (MIT) — all credit for the underlying format support belongs to its authors.
+- `dev-browser` wraps the [**dev-browser**](https://github.com/SawyerHood/dev-browser)
+  CLI by **Sawyer Hood** (MIT), brought to you by [Do Browser](https://dobrowser.io).
 - Built for [**Anthropic's Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
   format.
 
 ## License
 
-[MIT](LICENSE) © 2026 l3ad3r1. MarkItDown is a separate project under its own MIT
-license held by Microsoft.
+The skill packaging in this repo is [MIT](LICENSE) © 2026 l3ad3r1. Each wrapped
+upstream project (MarkItDown, dev-browser) remains under its own MIT license held
+by its respective authors.
