@@ -16,6 +16,7 @@ specialized tasks reliably.
 | [`pptx-toolkit`](skills/pptx-toolkit/) | Create, read, and edit PowerPoint `.pptx` decks (slides, bullets, images, notes) — built on `python-pptx`. |
 | [`mcp-server-builder`](skills/mcp-server-builder/) | Build MCP servers (tools/resources/prompts) in Python (FastMCP) or Node/TS — with a working template and best practices. |
 | [`skill-builder`](skills/skill-builder/) | Author, validate, and package Agent Skills into installable `.skill` archives — with bundled validator and packager. |
+| [`animejs`](skills/animejs/) | Build web animations with [anime.js](https://github.com/juliangarnier/anime) v4 (MIT, by Julian Garnier) — animate DOM/CSS/SVG/JS objects, timelines, staggers, scroll triggers, draggables, springs, and text; includes a v4 API cheat-sheet and a runnable CDN demo. |
 
 ---
 
@@ -115,6 +116,40 @@ Run `dev-browser --help` for the full LLM usage guide and API reference. See the
 
 ---
 
+## animejs
+
+Write web animations with [anime.js](https://animejs.com) **v4** — the modular,
+ESM-first rewrite. The skill teaches Claude the v4 API (`animate`,
+`createTimeline`, `createDraggable`, `onScroll`, `svg`, `text`, `stagger`,
+`utils`, springs/eases) and the v3→v4 migration deltas.
+
+### Install
+
+**Claude.ai (and Claude apps).** Download `animejs.skill` from the
+[Releases](../../releases) page, then upload it under
+**Settings → Capabilities → Skills**.
+
+**Claude Code.**
+
+```bash
+mkdir -p .claude/skills
+cp -r skills/animejs .claude/skills/      # or ~/.claude/skills/ for personal use
+```
+
+### What's inside
+
+- [`SKILL.md`](skills/animejs/SKILL.md) — when-to-use, install/import (npm + CDN),
+  the module map, common recipes, and migration notes.
+- [`reference.md`](skills/animejs/reference.md) — a per-module cheat-sheet with
+  copy-pasteable snippets.
+- [`examples/index.html`](skills/animejs/examples/index.html) — a self-contained,
+  buildless demo that loads anime.js from a CDN.
+
+The library itself is installed from npm (`npm install animejs`) or a CDN — it is
+**not vendored** in this repo.
+
+---
+
 ## Credits
 
 **Skills packaged by Rinu ([l3ad3r1](https://github.com/l3ad3r1)) in
@@ -133,6 +168,9 @@ collaboration with Claude (Anthropic).** Each skill credits its upstream authors
   [python-pptx](https://github.com/scanny/python-pptx) (all MIT).
 - `mcp-server-builder` uses the official [MCP SDKs](https://github.com/modelcontextprotocol)
   (MIT). `skill-builder` is an original work based on the public Agent Skills spec.
+- `animejs` documents and wraps [**anime.js**](https://github.com/juliangarnier/anime)
+  v4 by **Julian Garnier** (MIT) — all credit for the animation engine belongs to
+  its author and contributors; the library is installed from npm/CDN, not vendored.
 - These skills are **original, permissively-licensed** implementations — they do
   not include or derive from any proprietary skill content.
 - Built for the [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
