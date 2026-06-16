@@ -11,9 +11,11 @@
     intentional body differences)
   - Documented canonical/derived relationship + parity check in README
 
+- Rebuilt the 6 affected .skill packages, pushed main, and cut release
+  **v1.2.0** (assets attached). Hermes-skills pushed + first release v1.0.0.
+
 ## In progress
 - (none)
 
 ## Next steps
-- Run `python tools/check_parity.py` before each release
-- Push both repos when ready (and cut a release per the usual flow)
+- Run `python tools/check_parity.py` before each future release
