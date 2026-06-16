@@ -1,6 +1,6 @@
 ---
 name: pdf-toolkit
-description: Read, extract, and manipulate PDF files — extract text and tables, merge multiple PDFs, split or extract page ranges, rotate pages, add watermarks, and OCR scanned PDFs. Built on the permissively licensed pypdf, pdfplumber, and OCRmyPDF libraries. Use this skill whenever the user wants to read a PDF's contents, combine or split PDFs, rotate or watermark pages, pull tables out of a PDF, or make a scanned PDF searchable.
+description: Read, extract, and manipulate PDF files — extract text and tables, merge multiple PDFs, split or extract page ranges, rotate pages, add watermarks, and OCR scanned PDFs. Built on the permissively licensed pypdf, pdfplumber, and OCRmyPDF libraries. Use this skill whenever the user wants to read a PDF's contents, combine or split PDFs, rotate or watermark pages, pull tables out of a PDF, or make a scanned PDF searchable. For converting a PDF to Markdown or handling batches of mixed file types, use markitdown-converter instead.
 license: MIT
 ---
 

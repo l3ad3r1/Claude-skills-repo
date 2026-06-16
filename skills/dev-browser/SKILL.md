@@ -1,6 +1,6 @@
 ---
 name: dev-browser
-description: Drive a real web browser from the agent — navigate pages, click, fill forms, run Playwright actions, and take screenshots via sandboxed JavaScript, using the open-source dev-browser CLI. Use this skill whenever the user wants to automate a browser, scrape or read a live web page, test a web app end-to-end, fill or submit a web form, or interact with a site that needs a real browser (JS-rendered content, logins, dynamic pages).
+description: Drive a real web browser from the agent — navigate pages, click, fill forms, run Playwright actions, and take screenshots via sandboxed JavaScript, using the open-source dev-browser CLI. Use this skill whenever the user wants to automate a browser, scrape or read a live web page, test a web app end-to-end, fill or submit a web form, or interact with a site that needs a real browser (JS-rendered content, logins, dynamic pages). This is for scripted Playwright-style browser automation, not lightweight one-off page reads.
 license: MIT
 ---
 

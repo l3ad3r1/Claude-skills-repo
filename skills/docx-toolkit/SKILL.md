@@ -1,6 +1,6 @@
 ---
 name: docx-toolkit
-description: Create, read, and edit Microsoft Word (.docx) documents — add headings, paragraphs, styled runs, tables, images, page breaks, and read existing documents' text and tables. Built on the MIT-licensed python-docx library. Use this skill whenever the user wants to generate a Word document, edit an existing .docx, extract text or tables from a Word file, or produce a formatted report/letter/memo as .docx.
+description: Create, read, and edit Microsoft Word (.docx) documents — add headings, paragraphs, styled runs, tables, images, page breaks, and read existing documents' text and tables. Built on the MIT-licensed python-docx library. Use this skill whenever the user wants to generate a Word document, edit an existing .docx, extract text or tables from a Word file, or produce a formatted report/letter/memo as .docx. For converting a Word file to Markdown or handling batches of mixed file types, use markitdown-converter instead.
 license: MIT
 ---
 

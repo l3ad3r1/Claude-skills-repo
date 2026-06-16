@@ -1,6 +1,6 @@
 ---
 name: xlsx-toolkit
-description: Create, read, and edit Excel (.xlsx) spreadsheets — write and read cells, add multiple sheets, formulas, number/date formatting, styling, and charts. Built on the MIT-licensed openpyxl library. Use this skill whenever the user wants to generate a spreadsheet, edit an existing .xlsx, read data or formulas out of a workbook, add formulas or charts, or produce tabular output as an Excel file.
+description: Create, read, and edit Excel (.xlsx) spreadsheets — write and read cells, add multiple sheets, formulas, number/date formatting, styling, and charts. Built on the MIT-licensed openpyxl library. Use this skill whenever the user wants to generate a spreadsheet, edit an existing .xlsx, read data or formulas out of a workbook, add formulas or charts, or produce tabular output as an Excel file. For converting a workbook to Markdown or handling batches of mixed file types, use markitdown-converter instead.
 license: MIT
 ---
 

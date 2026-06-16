@@ -1,6 +1,6 @@
 ---
 name: markitdown-converter
-description: Convert files of almost any format (PDF, Word, PowerPoint, Excel, HTML, CSV, JSON, XML, images, audio, EPub, ZIP archives) into clean, structure-preserving Markdown using Microsoft's MarkItDown library — then optionally analyze or summarize the converted content. Use this skill whenever the user wants to convert documents to Markdown, extract text from mixed file types, prepare documents for an LLM pipeline or text analysis, turn a folder or ZIP of assorted files into one readable text file, or asks to "markdownify" anything. Also use it when the user uploads files in formats you can't read natively and wants their contents as text or Markdown.
+description: Convert files of almost any format (PDF, Word, PowerPoint, Excel, HTML, CSV, JSON, XML, images, audio, EPub, ZIP archives) into clean, structure-preserving Markdown using Microsoft's MarkItDown library — then optionally analyze or summarize the converted content. Use this skill whenever the user wants to convert documents to Markdown, extract text from mixed file types, prepare documents for an LLM pipeline or text analysis, turn a folder or ZIP of assorted files into one readable text file, or asks to "markdownify" anything. Also use it when the user uploads files in formats you can't read natively and wants their contents as text or Markdown. Use this for bulk or mixed-format conversion to Markdown; for creating/editing or pulling structured tables out of a single Office or PDF file, use the docx/xlsx/pptx/pdf toolkits instead.
 license: MIT
 ---
 
