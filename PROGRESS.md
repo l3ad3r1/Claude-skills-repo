@@ -16,7 +16,8 @@
 
 - Added `clone-website` skill (adapted from JCodesMore/ai-website-cloner-template,
   MIT) to both repos with NOTICE.md + README entries; built dist package.
-  Parity: 10 skills.
+  Parity: 10 skills. Pushed + released: Claude-skills-repo **v1.3.0**,
+  Hermes-skills **v1.1.0**.
 
 ## In progress
 - (none)
