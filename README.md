@@ -18,6 +18,7 @@ specialized tasks reliably.
 | [`skill-builder`](skills/skill-builder/) | Author, validate, and package Agent Skills into installable `.skill` archives — with bundled validator and packager. |
 | [`animejs`](skills/animejs/) | Build web animations with [anime.js](https://github.com/juliangarnier/anime) v4 (MIT, by Julian Garnier) — animate DOM/CSS/SVG/JS objects, timelines, staggers, scroll triggers, draggables, springs, and text; includes a v4 API cheat-sheet and a runnable CDN demo. |
 | [`clone-website`](skills/clone-website/) | Reverse-engineer and clone any website into a Next.js + shadcn/ui + Tailwind codebase — extracts assets/CSS/content section-by-section via a browser MCP and dispatches parallel builder agents in worktrees. Adapts the [ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) by JCodesMore (MIT); needs a browser MCP and the upstream Next.js scaffold. |
+| [`agent-reach`](skills/agent-reach/) | Give the agent live internet access — installs and drives the open-source [Agent Reach](https://github.com/Panniantong/agent-reach) CLI to read/search web pages, Twitter/X, YouTube, Reddit, GitHub, RSS, Bilibili, Xiaohongshu, LinkedIn, podcasts, and Exa web search through one zero-API-fee tool with automatic backend failover. By Panniantong (MIT); the CLI is installed from upstream, not vendored. |
 
 ---
 
@@ -187,6 +188,52 @@ The Next.js scaffold and browser tooling are **not vendored** in this repo.
 
 ---
 
+## agent-reach
+
+Give the agent eyes on the live internet. This skill installs and drives the
+open-source [Agent Reach](https://github.com/Panniantong/agent-reach) CLI, which
+wraps a fleet of free / open-source backends (Jina Reader, twitter-cli, yt-dlp,
+OpenCLI, rdt-cli, bili-cli, `gh`, feedparser, Exa via MCP) behind one tool with
+**primary + fallback** failover — so the agent can read and search content a
+plain HTTP fetch can't reach.
+
+### Reaches
+
+Web pages · YouTube transcripts · RSS/Atom · GitHub · global search (Exa) ·
+Bilibili · V2EX · Xueqiu · Twitter/X · Reddit · Xiaohongshu · LinkedIn ·
+Xiaoyuzhou podcasts. No-login channels work out of the box; login channels
+(Twitter/X, Reddit, Xiaohongshu, LinkedIn, podcasts) require credentials — use a
+**dedicated secondary account**, never your primary, since automated reading can
+get accounts banned.
+
+### Install
+
+**Claude.ai (and Claude apps).** Download `agent-reach.skill` from the
+[Releases](../../releases) page, then upload it under
+**Settings → Capabilities → Skills**.
+
+**Claude Code.**
+
+```bash
+mkdir -p .claude/skills
+cp -r skills/agent-reach .claude/skills/   # or ~/.claude/skills/ for personal use
+```
+
+The skill then installs the upstream CLI on demand:
+
+```bash
+pipx install https://github.com/Panniantong/agent-reach/archive/main.zip
+agent-reach install --env=auto
+agent-reach doctor          # check which channels are live
+```
+
+Credentials and tool repos live under `~/.agent-reach/` (config at
+`~/.agent-reach/config.yaml`, `600` perms, never transmitted). The Agent Reach
+CLI and its backends target Unix-like environments and are **not vendored** in
+this repo — they're installed from upstream (use WSL on Windows).
+
+---
+
 ## Credits
 
 **Skills packaged by Rinu ([l3ad3r1](https://github.com/l3ad3r1)) in
@@ -211,6 +258,10 @@ collaboration with Claude (Anthropic).** Each skill credits its upstream authors
 - `clone-website` adapts the [**ai-website-cloner-template**](https://github.com/JCodesMore/ai-website-cloner-template)
   by **JCodesMore** (MIT) — the SKILL.md instructions are reproduced from the
   upstream template; the Next.js scaffold and browser tooling are not vendored.
+- `agent-reach` documents and drives [**Agent Reach**](https://github.com/Panniantong/agent-reach)
+  by **Panniantong** (MIT) — all credit for the CLI and its backend integrations
+  belongs to its author and contributors; the CLI is installed from upstream, not
+  vendored.
 - These skills are **original, permissively-licensed** implementations — they do
   not include or derive from any proprietary skill content.
 - Built for the [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
@@ -238,5 +289,5 @@ body differs — some skills intentionally carry Hermes-specific wording.
 
 The skill packaging in this repo is [MIT](LICENSE) © 2026 l3ad3r1. Each wrapped
 or adapted upstream project (MarkItDown, dev-browser, anime.js,
-ai-website-cloner-template) remains under its own MIT license held by its
-respective authors.
+ai-website-cloner-template, Agent Reach) remains under its own MIT license held
+by its respective authors.

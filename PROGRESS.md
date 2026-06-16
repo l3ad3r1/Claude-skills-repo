@@ -1,6 +1,11 @@
 # PROGRESS
 
 ## Just completed
+- Added `agent-reach` skill (documents/drives the Panniantong/agent-reach CLI,
+  MIT) to both repos with NOTICE.md + README entries; built dist package.
+  Parity: 11 skills (2 expected body warnings). Pushed + released:
+  Claude-skills-repo **v1.4.0**, Hermes-skills **v1.2.0**.
+
 - Added trigger-disambiguation lines to skill descriptions:
   - markitdown-converter: clarified vs docx/xlsx/pptx/pdf toolkits
   - docx/pdf/pptx/xlsx toolkits: reciprocal "use markitdown-converter for conversion/batches"
