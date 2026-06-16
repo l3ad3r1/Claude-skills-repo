@@ -6,11 +6,14 @@
   - docx/pdf/pptx/xlsx toolkits: reciprocal "use markitdown-converter for conversion/batches"
   - dev-browser: clarified it's for scripted Playwright automation
 
+- Established this repo as the canonical source of truth:
+  - Added tools/check_parity.py (errors on missing skills/files, warns on
+    intentional body differences)
+  - Documented canonical/derived relationship + parity check in README
+
 ## In progress
-- Syncing same disambiguation edits into the Hermes-skills repo (_hermes)
-- Porting the `animejs` skill into Hermes-skills (currently only in Claude-skills-repo)
+- (none)
 
 ## Next steps
-1. Apply the same description edits in _hermes
-2. Copy animejs skill folder into _hermes/skills/software-development/animejs
-3. Commit each repo
+- Run `python tools/check_parity.py` before each release
+- Push both repos when ready (and cut a release per the usual flow)

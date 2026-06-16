@@ -176,6 +176,24 @@ collaboration with Claude (Anthropic).** Each skill credits its upstream authors
 - Built for the [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
   format.
 
+## Maintenance
+
+This repo is the **canonical source of truth** for skill content. The companion
+[Hermes-skills](https://github.com/l3ad3r1/Hermes-skills) repo repackages the
+same skills into category folders with richer frontmatter, so it is a *derived*
+copy: every skill added or changed here should be mirrored there.
+
+Before cutting a release, verify the two repos are in sync:
+
+```bash
+python tools/check_parity.py                 # assumes Hermes checked out at ../_hermes
+python tools/check_parity.py ../Hermes-skills # or pass the path explicitly
+```
+
+The check **errors** if a skill or bundled file exists in one repo but not the
+other (the kind of drift that is easy to miss), and **warns** when a `SKILL.md`
+body differs — some skills intentionally carry Hermes-specific wording.
+
 ## License
 
 The skill packaging in this repo is [MIT](LICENSE) © 2026 l3ad3r1. Each wrapped
