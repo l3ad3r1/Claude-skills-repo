@@ -17,6 +17,7 @@ specialized tasks reliably.
 | [`mcp-server-builder`](skills/mcp-server-builder/) | Build MCP servers (tools/resources/prompts) in Python (FastMCP) or Node/TS — with a working template and best practices. |
 | [`skill-builder`](skills/skill-builder/) | Author, validate, and package Agent Skills into installable `.skill` archives — with bundled validator and packager. |
 | [`animejs`](skills/animejs/) | Build web animations with [anime.js](https://github.com/juliangarnier/anime) v4 (MIT, by Julian Garnier) — animate DOM/CSS/SVG/JS objects, timelines, staggers, scroll triggers, draggables, springs, and text; includes a v4 API cheat-sheet and a runnable CDN demo. |
+| [`clone-website`](skills/clone-website/) | Reverse-engineer and clone any website into a Next.js + shadcn/ui + Tailwind codebase — extracts assets/CSS/content section-by-section via a browser MCP and dispatches parallel builder agents in worktrees. Adapts the [ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template) by JCodesMore (MIT); needs a browser MCP and the upstream Next.js scaffold. |
 
 ---
 
@@ -150,6 +151,42 @@ The library itself is installed from npm (`npm install animejs`) or a CDN — it
 
 ---
 
+## clone-website
+
+Reverse-engineer and rebuild any website as a pixel-perfect
+[Next.js](https://nextjs.org) + [shadcn/ui](https://ui.shadcn.com) +
+Tailwind v4 clone. The skill drives a browser MCP to extract design tokens,
+assets, computed CSS, and interaction models section-by-section, writes an
+auditable spec per component, and dispatches parallel builder agents in
+git worktrees.
+
+### Requirements
+
+- A **browser MCP** (Chrome MCP, Playwright MCP, Browserbase, etc.).
+- The **Next.js scaffold** from the upstream
+  [ai-website-cloner-template](https://github.com/JCodesMore/ai-website-cloner-template)
+  — create a repo from that template, then run the skill inside it.
+
+### Install
+
+**Claude.ai (and Claude apps).** Download `clone-website.skill` from the
+[Releases](../../releases) page, then upload it under
+**Settings → Capabilities → Skills**.
+
+**Claude Code.**
+
+```bash
+mkdir -p .claude/skills
+cp -r skills/clone-website .claude/skills/   # or ~/.claude/skills/ for personal use
+```
+
+Then run `/clone-website <url1> [<url2> ...]` from inside a project created from
+the upstream template.
+
+The Next.js scaffold and browser tooling are **not vendored** in this repo.
+
+---
+
 ## Credits
 
 **Skills packaged by Rinu ([l3ad3r1](https://github.com/l3ad3r1)) in
@@ -171,6 +208,9 @@ collaboration with Claude (Anthropic).** Each skill credits its upstream authors
 - `animejs` documents and wraps [**anime.js**](https://github.com/juliangarnier/anime)
   v4 by **Julian Garnier** (MIT) — all credit for the animation engine belongs to
   its author and contributors; the library is installed from npm/CDN, not vendored.
+- `clone-website` adapts the [**ai-website-cloner-template**](https://github.com/JCodesMore/ai-website-cloner-template)
+  by **JCodesMore** (MIT) — the SKILL.md instructions are reproduced from the
+  upstream template; the Next.js scaffold and browser tooling are not vendored.
 - These skills are **original, permissively-licensed** implementations — they do
   not include or derive from any proprietary skill content.
 - Built for the [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
@@ -197,5 +237,6 @@ body differs — some skills intentionally carry Hermes-specific wording.
 ## License
 
 The skill packaging in this repo is [MIT](LICENSE) © 2026 l3ad3r1. Each wrapped
-upstream project (MarkItDown, dev-browser) remains under its own MIT license held
-by its respective authors.
+or adapted upstream project (MarkItDown, dev-browser, anime.js,
+ai-website-cloner-template) remains under its own MIT license held by its
+respective authors.

@@ -14,6 +14,10 @@
 - Rebuilt the 6 affected .skill packages, pushed main, and cut release
   **v1.2.0** (assets attached). Hermes-skills pushed + first release v1.0.0.
 
+- Added `clone-website` skill (adapted from JCodesMore/ai-website-cloner-template,
+  MIT) to both repos with NOTICE.md + README entries; built dist package.
+  Parity: 10 skills.
+
 ## In progress
 - (none)
 
