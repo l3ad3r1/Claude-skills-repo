@@ -1,6 +1,14 @@
 # PROGRESS
 
 ## Just completed
+- Added `auto-browser` (LvcidPsyche/auto-browser, MIT) and `headroom`
+  (chopratejas/headroom-ai, Apache-2.0) skills to both repos with NOTICE.md +
+  README entries + "Installation notes & known issues" sections documenting the
+  Windows install problems and the WSL2 workarounds (Docker Desktop AF_UNIX
+  breakage → Docker Engine in WSL2; headroom Rust-extension build failure →
+  uv-in-WSL2). Built dist packages. Parity: 13 skills (2 expected body warnings).
+  Released: Claude-skills-repo **v1.5.0**, Hermes-skills **v1.3.0**.
+
 - Added `agent-reach` skill (documents/drives the Panniantong/agent-reach CLI,
   MIT) to both repos with NOTICE.md + README entries; built dist package.
   Parity: 11 skills (2 expected body warnings). Pushed + released:
