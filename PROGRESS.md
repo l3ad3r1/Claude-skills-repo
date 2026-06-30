@@ -1,6 +1,18 @@
 # PROGRESS
 
 ## Just completed
+- Mirrored the **Taste Skill family** — 12 skills from leonxlnx/taste-skill (MIT,
+  tasteskill.dev): `taste-skill`, `soft-skill`, `minimalist-skill`,
+  `brutalist-skill`, `redesign-skill`, `gpt-tasteskill`, `image-to-code-skill`,
+  `stitch-skill`, `brandkit`, `imagegen-frontend-web`, `imagegen-frontend-mobile`,
+  `output-skill` (skipped legacy `taste-skill-v1`). Canonical: `skills/<name>/`
+  with a Credits note appended to each SKILL.md crediting Leonxlnx; README gained
+  12 table rows + a "Taste Skill family" section + Credits/License entries; built
+  12 dist packages. Hermes: mirrored under new `design/` category with Hermes
+  frontmatter (author=Leonxlnx, upstream link) + README rows. Parity: **25 skills,
+  2 expected body warnings**. Released: Claude-skills-repo **v1.6.0**,
+  Hermes-skills **v1.4.0**.
+
 - Added `auto-browser` (LvcidPsyche/auto-browser, MIT) and `headroom`
   (chopratejas/headroom-ai, Apache-2.0) skills to both repos with NOTICE.md +
   README entries + "Installation notes & known issues" sections documenting the

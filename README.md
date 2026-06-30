@@ -21,6 +21,18 @@ specialized tasks reliably.
 | [`agent-reach`](skills/agent-reach/) | Give the agent live internet access — installs and drives the open-source [Agent Reach](https://github.com/Panniantong/agent-reach) CLI to read/search web pages, Twitter/X, YouTube, Reddit, GitHub, RSS, Bilibili, Xiaohongshu, LinkedIn, podcasts, and Exa web search through one zero-API-fee tool with automatic backend failover. By Panniantong (MIT); the CLI is installed from upstream, not vendored. |
 | [`auto-browser`](skills/auto-browser/) | Give the agent a real, human-in-the-loop browser — navigate, click, fill forms, reuse saved logins, screenshot, and take over via noVNC — using the open-source [auto-browser](https://github.com/LvcidPsyche/auto-browser) MCP control plane by LvcidPsyche (MIT). Runs as a local Docker stack (controller + Chromium) with an MCP bridge; includes Windows-via-WSL2 deployment notes for when Docker Desktop's AF_UNIX layer is broken. |
 | [`headroom`](skills/headroom/) | Context compression for AI agents — cut tokens sent to the model by 60–95% by compressing tool outputs, logs, files, and history before they reach the LLM. Wraps the open-source [headroom](https://github.com/chopratejas/headroom) (`headroom-ai`) tool by chopratejas (Apache-2.0): MCP tools `headroom_compress`/`retrieve`/`stats` + optional proxy; includes Windows-via-WSL2 install notes for its Rust extension. |
+| [`taste-skill`](skills/taste-skill/) | Anti-slop frontend skill for landing pages, portfolios, and redesigns — reads the brief, infers a design direction, sets variance/motion/density dials, and ships interfaces that don't look templated. From the [Taste Skill](https://github.com/leonxlnx/taste-skill) collection by Leonxlnx (MIT). |
+| [`soft-skill`](skills/soft-skill/) | Design like a high-end agency — defines the exact fonts, spacing, shadows, card structures, and motion that make a UI feel expensive, and blocks the cheap AI defaults. By Leonxlnx (MIT). |
+| [`minimalist-skill`](skills/minimalist-skill/) | Clean editorial interfaces — warm monochrome palette, typographic contrast, flat bento grids, muted pastels; no gradients, no heavy shadows. By Leonxlnx (MIT). |
+| [`brutalist-skill`](skills/brutalist-skill/) | Raw mechanical interfaces fusing Swiss typographic print with military-terminal aesthetics — rigid grids, extreme type contrast, analog degradation. For data-heavy dashboards, portfolios, editorial sites. By Leonxlnx (MIT). |
+| [`redesign-skill`](skills/redesign-skill/) | Upgrade existing sites/apps to premium quality — audits the current design, flags generic AI patterns, and applies high-end standards without breaking functionality. Any CSS framework or vanilla. By Leonxlnx (MIT). |
+| [`gpt-tasteskill`](skills/gpt-tasteskill/) | Elite UX/UI + advanced GSAP motion — Python-driven layout randomization, AIDA structure, wide editorial typography, gapless bento grids, strict ScrollTriggers (pin/stack/scrub). By Leonxlnx (MIT). |
+| [`image-to-code-skill`](skills/image-to-code-skill/) | Image-to-code for Codex — generate large, section-specific design images first, analyze them deeply, then implement the site to match; bans lazy under-generation and card-in-card UI. By Leonxlnx (MIT). |
+| [`stitch-skill`](skills/stitch-skill/) | Semantic design-system skill for Google Stitch — emits agent-friendly `DESIGN.md` files enforcing strict typography, calibrated color, asymmetric layouts, and perpetual micro-motion. By Leonxlnx (MIT). |
+| [`brandkit`](skills/brandkit/) | Premium brand-kit image generation — brand-guideline boards, logo systems, identity decks, and visual-world presentations across minimalist, cinematic, luxury, dark-tech, and consumer-app systems. By Leonxlnx (MIT). |
+| [`imagegen-frontend-web`](skills/imagegen-frontend-web/) | Generate premium, conversion-aware website design references — one horizontal image per section, varied composition/CTAs/hero scales, one consistent palette, for landing pages and product comps. By Leonxlnx (MIT). |
+| [`imagegen-frontend-mobile`](skills/imagegen-frontend-mobile/) | Generate premium app-native mobile screen concepts and flows (iOS/Android/cross-platform) — clean hierarchy, multi-screen consistency, custom iconography, framed in a subtle phone mockup. Images only. By Leonxlnx (MIT). |
+| [`output-skill`](skills/output-skill/) | Override default LLM truncation — enforce complete code generation, ban placeholder patterns, and handle token-limit splits cleanly. Apply to any task needing exhaustive, unabridged output. By Leonxlnx (MIT). |
 
 ---
 
@@ -236,6 +248,43 @@ this repo — they're installed from upstream (use WSL on Windows).
 
 ---
 
+## Taste Skill family
+
+`taste-skill`, `soft-skill`, `minimalist-skill`, `brutalist-skill`,
+`redesign-skill`, `gpt-tasteskill`, `image-to-code-skill`, `stitch-skill`,
+`brandkit`, `imagegen-frontend-web`, `imagegen-frontend-mobile`, and
+`output-skill` are mirrored from the open-source
+[**Taste Skill**](https://github.com/leonxlnx/taste-skill) collection
+([tasteskill.dev](https://tasteskill.dev)) by **[Leonxlnx](https://github.com/leonxlnx)** (MIT) —
+the "anti-slop" frontend framework for AI agents. They teach the agent stronger
+layout, typography, motion, and spacing instead of templated-looking UIs.
+
+These are **pure prompt/instruction skills** (no scripts, no dependencies). The
+aesthetic siblings are deliberately interchangeable — pick one design language:
+
+- **`taste-skill`** — the flagship router: reads the brief, sets the dials, picks a direction.
+- **`soft-skill`** — high-end-agency polish (expensive-feeling fonts/spacing/shadows/motion).
+- **`minimalist-skill`** — calm editorial monochrome, flat bento, no gradients.
+- **`brutalist-skill`** — Swiss-print × military-terminal, declassified-blueprint feel.
+- **`redesign-skill`** — audit-and-upgrade an existing site without breaking it.
+- **`gpt-tasteskill`** — GSAP-heavy motion + Python-randomized editorial layouts.
+
+The image-generation skills (**`brandkit`**, **`imagegen-frontend-web`**,
+**`imagegen-frontend-mobile`**) and **`image-to-code-skill`** produce reference
+boards/frames you can hand to a coding model; **`stitch-skill`** emits a
+`DESIGN.md` for Google Stitch; **`output-skill`** is a cross-cutting
+anti-truncation enforcer. Each skill's full attribution lives in its `SKILL.md`
+Credits section.
+
+Install any of them the same way as the others:
+
+```bash
+mkdir -p .claude/skills
+cp -r skills/taste-skill .claude/skills/   # or ~/.claude/skills/ ; swap in any skill name
+```
+
+---
+
 ## Credits
 
 **Skills packaged by Rinu ([l3ad3r1](https://github.com/l3ad3r1)) in
@@ -264,7 +313,14 @@ collaboration with Claude (Anthropic).** Each skill credits its upstream authors
   by **Panniantong** (MIT) — all credit for the CLI and its backend integrations
   belongs to its author and contributors; the CLI is installed from upstream, not
   vendored.
-- These skills are **original, permissively-licensed** implementations — they do
+- The **Taste Skill family** (`taste-skill`, `soft-skill`, `minimalist-skill`,
+  `brutalist-skill`, `redesign-skill`, `gpt-tasteskill`, `image-to-code-skill`,
+  `stitch-skill`, `brandkit`, `imagegen-frontend-web`, `imagegen-frontend-mobile`,
+  `output-skill`) is mirrored from the [**Taste Skill**](https://github.com/leonxlnx/taste-skill)
+  collection ([tasteskill.dev](https://tasteskill.dev)) by **[Leonxlnx](https://github.com/leonxlnx)**
+  (MIT) — all credit for the design systems and prompt engineering belongs to its
+  author; the SKILL.md content is reproduced unmodified except for a credits note.
+- These skills are **original or permissively-licensed** implementations — they do
   not include or derive from any proprietary skill content.
 - Built for the [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
   format.
@@ -291,5 +347,6 @@ body differs — some skills intentionally carry Hermes-specific wording.
 
 The skill packaging in this repo is [MIT](LICENSE) © 2026 l3ad3r1. Each wrapped
 or adapted upstream project (MarkItDown, dev-browser, anime.js,
-ai-website-cloner-template, Agent Reach) remains under its own MIT license held
-by its respective authors.
+ai-website-cloner-template, Agent Reach, and the
+[Taste Skill](https://github.com/leonxlnx/taste-skill) collection by Leonxlnx)
+remains under its own license held by its respective authors.
