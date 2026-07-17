@@ -1,6 +1,16 @@
 # PROGRESS
 
 ## Just completed
+- Added `social-media-analyzer` — mirrored from borghei/Claude-Skills
+  (`marketing/social-media-analyzer`, **MIT + Commons Clause**, Amin Borghei).
+  Canonical `skills/social-media-analyzer/` with SKILL.md (+ appended Credits
+  note), HOW_TO_USE.md, `scripts/{calculate_metrics,analyze_performance}.py`,
+  `assets/{sample_input,expected_output}.json`, `references/platform-benchmarks.md`,
+  and NOTICE.md (Commons Clause attribution). README gained a table row + Credits/
+  License entries; built `dist/social-media-analyzer.skill`. Smoke-tested the
+  scripts against the bundled sample (runs; benchmark = excellent). Released:
+  Claude-skills-repo **v1.7.0**. Hermes-skills mirror + parity check still pending.
+
 - Mirrored the **Taste Skill family** — 12 skills from leonxlnx/taste-skill (MIT,
   tasteskill.dev): `taste-skill`, `soft-skill`, `minimalist-skill`,
   `brutalist-skill`, `redesign-skill`, `gpt-tasteskill`, `image-to-code-skill`,

@@ -33,6 +33,7 @@ specialized tasks reliably.
 | [`imagegen-frontend-web`](skills/imagegen-frontend-web/) | Generate premium, conversion-aware website design references — one horizontal image per section, varied composition/CTAs/hero scales, one consistent palette, for landing pages and product comps. By Leonxlnx (MIT). |
 | [`imagegen-frontend-mobile`](skills/imagegen-frontend-mobile/) | Generate premium app-native mobile screen concepts and flows (iOS/Android/cross-platform) — clean hierarchy, multi-screen consistency, custom iconography, framed in a subtle phone mockup. Images only. By Leonxlnx (MIT). |
 | [`output-skill`](skills/output-skill/) | Override default LLM truncation — enforce complete code generation, ban placeholder patterns, and handle token-limit splits cleanly. Apply to any task needing exhaustive, unabridged output. By Leonxlnx (MIT). |
+| [`social-media-analyzer`](skills/social-media-analyzer/) | Analyze social media campaign performance — engagement rate, CTR, ROI/CPE/CPM/ROAS, and top-performer ranking, benchmarked per platform (Instagram, Facebook, Twitter/X, LinkedIn, TikTok). Includes bundled Python metric/analysis scripts, sample I/O, and a 2026 benchmark reference. From the [Claude Skills Library](https://github.com/borghei/Claude-Skills) by Amin Borghei (MIT + Commons Clause). |
 
 ---
 
@@ -320,6 +321,11 @@ collaboration with Claude (Anthropic).** Each skill credits its upstream authors
   collection ([tasteskill.dev](https://tasteskill.dev)) by **[Leonxlnx](https://github.com/leonxlnx)**
   (MIT) — all credit for the design systems and prompt engineering belongs to its
   author; the SKILL.md content is reproduced unmodified except for a credits note.
+- `social-media-analyzer` is mirrored from the [**Claude Skills Library**](https://github.com/borghei/Claude-Skills)
+  by **[Amin Borghei](https://github.com/borghei)** (**MIT + Commons Clause**) —
+  all credit for the metrics logic, ROI model, and platform benchmarks belongs to
+  its author. Redistribution is permitted; the Commons Clause forbids *selling*
+  the software (see the skill's `NOTICE.md`).
 - These skills are **original or permissively-licensed** implementations — they do
   not include or derive from any proprietary skill content.
 - Built for the [**Agent Skills**](https://docs.claude.com/en/docs/agents-and-tools/agent-skills/overview)
@@ -347,6 +353,8 @@ body differs — some skills intentionally carry Hermes-specific wording.
 
 The skill packaging in this repo is [MIT](LICENSE) © 2026 l3ad3r1. Each wrapped
 or adapted upstream project (MarkItDown, dev-browser, anime.js,
-ai-website-cloner-template, Agent Reach, and the
-[Taste Skill](https://github.com/leonxlnx/taste-skill) collection by Leonxlnx)
-remains under its own license held by its respective authors.
+ai-website-cloner-template, Agent Reach, the
+[Taste Skill](https://github.com/leonxlnx/taste-skill) collection by Leonxlnx, and
+the [Claude Skills Library](https://github.com/borghei/Claude-Skills) by Amin
+Borghei — MIT + Commons Clause) remains under its own license held by its
+respective authors.
